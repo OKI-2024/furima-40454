@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   validates :nickname, presence: true
   
   validates :first_name, presence: true,
@@ -17,9 +17,6 @@ class User < ApplicationRecord
 
   validates :last_name_kana, presence: true,
             format: { with: /\A[ァ-ヶー－]+\z/, message: "は全角カタカナで入力してください" }
-
-
-
 
   validates :birthday, presence: true
 
