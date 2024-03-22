@@ -8,9 +8,15 @@ class Item < ApplicationRecord
   belongs_to :days_up_to_delivery
   has_one_attached :image
 
-
-
-
+  validates :name,
+            :description,
+            :category_id,
+            :status_id,
+            :delivery_charge_id,
+            :region_id,
+            :days_up_to_delivery_id,
+            :price,
+            presence: true
 
 
 end
