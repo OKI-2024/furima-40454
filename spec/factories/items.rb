@@ -7,15 +7,11 @@ FactoryBot.define do
     delivery_charge_id            { rand(2..3) }
     region_id                     { rand(2..48) }
     days_up_to_delivery_id        { rand(2..4) }
-    price                         { rand(300..9999999) }
+    price                         { rand(300..9_999_999) }
     association :user
 
     after(:build) do |message|
       message.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
     end
-
   end
 end
-
-
-
