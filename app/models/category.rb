@@ -1,4 +1,4 @@
-class Catagory < ActiveHash::Base
+class Category < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: 'メンズ' },
@@ -9,9 +9,9 @@ class Catagory < ActiveHash::Base
     { id: 7, name: 'おもちゃ・ホビー・グッズ' },
     { id: 8, name: '家電・スマホ・カメラ' },
     { id: 9, name: 'ゲーム、おもちゃ' },
-    { id: 10, name: 'スポーツ・レジャー' }
-    { id: 11, name: 'ハンドメイド' }
-    { id: 12, name: 'その他' }
+    { id: 10, name: 'スポーツ・レジャー' },
+    { id: 11, name: 'ハンドメイド' },
+    { id: 12, name: 'その他' },
   ]
 
   include ActiveHash::Associations
