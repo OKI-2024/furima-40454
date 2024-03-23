@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+extend ActiveHash::Associations::ActiveRecordExtensions
+    
   belongs_to :user
   has_one :purchase_record
   belongs_to :category
@@ -7,7 +9,7 @@ class Item < ApplicationRecord
   belongs_to :region
   belongs_to :days_up_to_delivery
   has_one_attached :image
-
+  
   validates :name,
             :description,
             :category_id,
@@ -16,7 +18,8 @@ class Item < ApplicationRecord
             :region_id,
             :days_up_to_delivery_id,
             :price,
-            presence: true
+            presence: true,
+            numericality: { other_than: 1 , message: "can't be blank"}
 
 
 end
