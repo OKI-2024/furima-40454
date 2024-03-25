@@ -34,6 +34,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
+      it '商品の状態が未選択の場合、出品できない' do
+        @item.status_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Status can't be blank")
+      end
       it '配送料の負担が未選択の場合、出品できない' do
         @item.delivery_charge_id = 1
         @item.valid?
