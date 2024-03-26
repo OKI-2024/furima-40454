@@ -15,7 +15,11 @@ def create
 end
 
 
+private
 
+  def purchase_record_params
+    params.require(:purchase_record).merge(user_id: current_user.id, item_id: params[:item_id])
+  end
 
 
 
