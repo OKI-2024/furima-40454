@@ -22,13 +22,13 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def edit 
+  def edit
     @item = Item.find(params[:id])
     if @item.user == current_user
       render :edit
-    elsif user_signed_in? && @item.user!= current_user
+    elsif user_signed_in? && @item.user != current_user
       redirect_to root_path
-    else 
+    else
       redirect_to user_session_path
     end
   end
@@ -41,8 +41,6 @@ class ItemsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-
-
 
   private
 
