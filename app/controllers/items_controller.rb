@@ -42,6 +42,7 @@ class ItemsController < ApplicationController
        redirect_to root_path
     else
       redirect_to item_path(@item)
+    end
   end
 
   private
