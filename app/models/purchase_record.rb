@@ -4,6 +4,6 @@ class PurchaseRecord < ApplicationRecord
   has_one :destination
 
 
-  
+  attr_accessor :token
 
 end
