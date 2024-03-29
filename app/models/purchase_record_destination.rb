@@ -5,7 +5,7 @@ class PurchaseRecordDestination
   with_options presence: true do
     
     validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Enter it as follows (e.g. 123-4567)"}
-    validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}
+    validates :city
     validates :block
     validates :phone_number
     validates :region_id, numericality: { other_than: 1, message: "can't be blank" }
@@ -30,11 +30,11 @@ class PurchaseRecordDestination
     return if phone_number.blank? # 空の場合
 
     unless phone_number.match?(/\A\d+\z/) # 記号が含まれる場合
-      errors.add(:phone_number, "Phone number is invalid. Input only number")
+      errors.add(:phone_number, "is invalid. Input only number")
     end
     
     unless phone_number.length >= 10 # 10桁未満の場合
-      errors.add(:phone_number, "Phone number is too short")
+      errors.add(:phone_number, "is too short")
     end
   end
 
