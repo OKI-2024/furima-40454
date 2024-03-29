@@ -11,11 +11,6 @@ def index
   end
 end
 
-def new
-  @purchase_record_destination = PurchaseRecordDestination.new
-end
-
-
 
 def create
   @purchase_record_destination = PurchaseRecordDestination.new(purchase_record_destination_params)
