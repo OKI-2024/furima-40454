@@ -41,7 +41,6 @@ class PurchaseRecordDestination
       errors.add(:phone_number, "is too long")
     end
 
-    end
   end
 
 

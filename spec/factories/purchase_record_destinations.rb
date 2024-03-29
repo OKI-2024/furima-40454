@@ -7,8 +7,6 @@ FactoryBot.define do
     phone_number{Faker::Number.leading_zero_number(digits: 11)}
     region_id{ rand(2..48) }
     token{Faker::Alphanumeric.alphanumeric(number: 30)}
-    user_id { 1 }
-    item_id { 1 }
     
   end
 end
