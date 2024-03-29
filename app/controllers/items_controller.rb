@@ -23,8 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    return unless @item.user != current_user
-
+    return unless @item.user != current_user || @item.purchase_record != nil
     redirect_to root_path
   end
 
@@ -42,6 +41,7 @@ class ItemsController < ApplicationController
        redirect_to root_path
     else
       redirect_to item_path(@item)
+    end
   end
 
   private
