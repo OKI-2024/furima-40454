@@ -72,6 +72,12 @@ RSpec.describe PurchaseRecordDestination, type: :model do
         expect(@purchase_record_destination.errors.full_messages).to include("Phone number is too short")
       end
 
+      it '電話番号が12桁以上の場合、購入できない' do
+        @purchase_record_destination.phone_number = "080456789012"
+        @purchase_record_destination.valid?
+        expect(@purchase_record_destination.errors.full_messages).to include("Phone number is too long")
+      end
+
       it '電話番号にハイフンが含まれていた場合、購入できない' do
         @purchase_record_destination.phone_number = "080-1234-5678"
         @purchase_record_destination.valid?

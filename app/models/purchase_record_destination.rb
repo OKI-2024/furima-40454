@@ -37,7 +37,7 @@ class PurchaseRecordDestination
       errors.add(:phone_number, "is too short")
     end
 
-    if phone_number.length > 12 # 12桁以上の場合
+    if phone_number.length > 11 # 12桁以上の場合
       errors.add(:phone_number, "is too long")
     end
 
