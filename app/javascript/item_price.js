@@ -5,7 +5,7 @@ function pay() {
     const addTaxDom = document.getElementById("add-tax-price");
     addTaxDom.innerHTML = Math.floor(inputValue * 0.1).toLocaleString();
     const addProfitDom = document.getElementById("profit");
-    addProfitDom.innerHTML = Math.floor(inputValue * 0.9).toLocaleString();
+    addProfitDom.innerHTML = Math.ceil(inputValue * 0.9).toLocaleString();
   });
 }
 
